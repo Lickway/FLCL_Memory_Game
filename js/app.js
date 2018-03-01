@@ -18,36 +18,54 @@ console.log("Linked!");
 //add event Click
 let imageA = null;
 let imageB = null;
+let imageElementA = null;
 let backImage = "../images/FLCL_BACK.jpg";
 
 let $container = $(".container");
+// $("img").on("click", clickCard);
+document.querySelectorAll("img").forEach(element => {
+  element.addEventListener("click", clickCard);
+});
 //reveal card face
 function clickCard(evt) {
   // get access to DOM element clicked on
-  let image = evt.target;
+  let imageElement = evt.target;
+  console.log("now: ", imageElement);
+  console.log("prev: ", imageElementA);
   //extract face of card from the element
-  let faceImageSRC = image.getAttribute("data-card-src");
-  image.setAttribute("src", faceImageSRC);
+  let faceImageSRC = imageElement.getAttribute("data-card-src");
+  imageElement.setAttribute("src", faceImageSRC);
   //if the images clicked on
   if (imageA === null) {
+    //changes src of first image clicked
     imageA = faceImageSRC;
+    // store DOM element for first card clicked
+    imageElementA = imageElement;
   } else {
     imageB = faceImageSRC;
     if (imageA === imageB) {
+      imageElement.removeEventListener("click", clickCard);
+      imageElementA.removeEventListener("click", clickCard);
       imageA = null;
-      imageB = null; //stay face up
+      imageB = null;
+      imageElementA = null;
+      //stay face up
     } else {
-      //keeps incorrect icon visible for 1.5 seconds
-      setTimeout(function() {
-        image.setAttribute("src", backImage);
-      }, 1500);
+      //keeps incorrect icons visible for 1.5 seconds
 
+      setTimeout(function() {
+        imageElementA.setAttribute("src", backImage);
+        imageElement.setAttribute("src", backImage);
+        imageA = null;
+        imageB = null;
+        imageElementA = null;
+      }, 1500);
       //revert to back image
     }
     // flip back to back image
   }
 }
-$container.click(clickCard);
+// $container.click(clickCard);
 
 // Change two of the cards to different cards
 // Check if the two cards that have been clicked on are the same card
