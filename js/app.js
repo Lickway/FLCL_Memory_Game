@@ -15,26 +15,37 @@ console.log("Linked!");
 
 //event listener for the board
 //variable for 4 four cards
-
 //add event Click
+let imageA = null;
+let imageB = null;
+let backImage = "../images/FLCL_BACK.jpg";
+
 let $container = $(".container");
 //reveal card face
 function clickCard(evt) {
   // get access to DOM element clicked on
   let image = evt.target;
-  console.log(image);
   //extract face of card from the element
   let faceImageSRC = image.getAttribute("data-card-src");
   image.setAttribute("src", faceImageSRC);
-  console.log(image);
   //if the images clicked on
-  // if (imageA === imageB) {
-  //   console.log("A Match");
-  //   // stay face up
-  // } else {
-  //   console.log("not a match");
-  //   // flip back to back image
-  // }
+  if (imageA === null) {
+    imageA = faceImageSRC;
+  } else {
+    imageB = faceImageSRC;
+    if (imageA === imageB) {
+      imageA = null;
+      imageB = null; //stay face up
+    } else {
+      //keeps incorrect icon visible for 1.5 seconds
+      setTimeout(function() {
+        image.setAttribute("src", backImage);
+      }, 1500);
+
+      //revert to back image
+    }
+    // flip back to back image
+  }
 }
 $container.click(clickCard);
 
