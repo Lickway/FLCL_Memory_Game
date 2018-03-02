@@ -23,6 +23,49 @@ console.log("Linked!");
 //Timer that starts from 00:00:00 and incrememnts by miliseconds until all icons have been matched
 //Score board that keeps track of times appended to user's initials
 //Alert after all icons have been matched "COngratulations, [user initials]! Your score is [timer]"
+let icons = [
+  "../images/FLCL_Cigarette.jpg",
+  "../images/FLCL_Silhouette.jpg",
+  "../images/FLCL_Angel.jpg",
+  "../images/FLCL_Annoyed.jpg",
+  "../images/FLCL_Baseball_Guitar.jpg",
+  "../images/FLCL_Horn.jpg",
+  "../images/FLCL_Moped.jpg",
+  "../images/FLCL_Kneeling.jpg",
+  "../images/FLCL_Baseball_Hit.jpg",
+  "../images/FLCL_Bat.jpg",
+  "../images/FLCL_Drink.jpg",
+  "../images/FLCL_Bed.jpg",
+  "../images/FLCL_Logo_Cat.jpg",
+  "../images/FLCL_Logo_Japanese.jpg",
+  "../images/FLCL_Mamimi.jpg",
+  "../images/FLCL_Piggyback.jpg",
+  "../images/FLCL_Popcicle.jpg",
+  "../images/FLCL_Portrait.jpg"
+];
+
+let createBoard = () => {
+  for (let i = 0; i < icons.length; i++) {
+    //create 2 image DOM nodes
+    let $iconNode1 = $("<img>");
+    //set src
+    $iconNode1.attr("src", "../images/FLCL_BACK.jpg");
+    //set data src
+    $iconNode1.attr("data-card-src", icons[i]);
+    //class to tile
+    $iconNode1.attr("class", "tile");
+    let $iconNode2 = $("<img>");
+    //set src
+    $iconNode2.attr("src", "../images/FLCL_BACK.jpg");
+    //set data src
+    $iconNode2.attr("data-card-src", icons[i]);
+    //class to tile
+    $iconNode2.attr("class", "tile");
+    let $container = $(".container");
+    $container.append($iconNode1, $iconNode2);
+  }
+};
+createBoard();
 
 //event listener for the board
 //variable for 4 four cards
@@ -77,6 +120,17 @@ function clickCard(evt) {
     // flip back to back image
   }
 }
+
+// var form = document.querySelector(".form");
+// form.addeventListener("submit", function(evt) {
+//   evt.preventDefault();
+//   var nameInput = document.querySelector('.name'):
+//   console.log(nameInput.value);
+// });
+//
+// setInterval(function() {
+//   alert("Hello");
+// }, 3000);
 // $container.click(clickCard);
 
 // Change two of the cards to different cards

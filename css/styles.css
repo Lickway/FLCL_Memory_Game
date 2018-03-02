@@ -1,6 +1,31 @@
 body {
   background-color: #e4e3df;
 }
+.header {
+  border: solid #ccc7b8;
+  background-color: #4f51b2;
+  height: 301px;
+  margin: auto 0;
+}
+.bodyLandingOne {
+  border: solid transparent;
+  background-color: #d39957;
+  height: 500px;
+  width: 49%;
+  margin: auto 0;
+  float: left;
+}
+.bodyLandingTwo {
+  border: solid transparent;
+  background-color: #d39957;
+  height: 500px;
+  width: 49%;
+  margin: auto 0;
+  float: right;
+}
+.buttons {
+  display: inline-block;
+}
 .begin {
   background-color: #480a00;
   border: none;
@@ -27,6 +52,7 @@ body {
   width: 620px;
   height: auto;
   margin: 0 auto;
+  display: block;
 }
 h1 {
   font-family: "Poiret One", cursive;
