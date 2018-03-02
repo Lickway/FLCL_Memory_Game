@@ -1,10 +1,41 @@
-div {
-  border: 5px solid black;
+body {
+  background-color: #e4e3df;
+}
+.begin {
+  background-color: #480a00;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+.reset {
+  background-color: #ce4111;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+.container {
+  border: 5px solid #c64e1f;
+  background-color: #a8a18e;
+  width: 620px;
+  height: auto;
+  margin: 0 auto;
 }
 h1 {
-  font-style: italic;
+  font-family: "Poiret One", cursive;
+  color: #413026;
+  margin: 0 auto;
+  width: 300px;
+  padding: 25px;
 }
 .tile {
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
 }

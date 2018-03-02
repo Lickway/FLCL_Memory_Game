@@ -1,4 +1,15 @@
 console.log("Linked!");
+//Potential timer from https://albert-gonzalez.github.io/easytimer.js/
+// var timer = new Timer();
+// timer.start({ precision: "secondTenths" });
+// timer.addEventListener("secondsUpdated", function(e) {
+//   $("#secondTenthsExample .values").html(
+//     timer
+//       .callbackTimer()
+//       .toString(["hours", "minutes", "seconds", "secondTenths"])
+//   );
+// });
+
 //landing page with an FLCL banner
 
 //sub header with "Memory Game"
@@ -30,8 +41,9 @@ document.querySelectorAll("img").forEach(element => {
 function clickCard(evt) {
   // get access to DOM element clicked on
   let imageElement = evt.target;
-  console.log("now: ", imageElement);
-  console.log("prev: ", imageElementA);
+  // console.log(evt.target);
+  // console.log("now: ", imageElement);
+  // console.log("prev: ", imageElementA);
   //extract face of card from the element
   let faceImageSRC = imageElement.getAttribute("data-card-src");
   imageElement.setAttribute("src", faceImageSRC);
@@ -59,7 +71,7 @@ function clickCard(evt) {
         imageA = null;
         imageB = null;
         imageElementA = null;
-      }, 1500);
+      }, 500);
       //revert to back image
     }
     // flip back to back image
