@@ -1,28 +1,4 @@
-console.log("Linked!");
-//Potential timer from https://albert-gonzalez.github.io/easytimer.js/
-// var timer = new Timer();
-// timer.start({ precision: "secondTenths" });
-// timer.addEventListener("secondsUpdated", function(e) {
-//   $("#secondTenthsExample .values").html(
-//     timer
-//       .callbackTimer()
-//       .toString(["hours", "minutes", "seconds", "secondTenths"])
-//   );
-// });
-
-//landing page with an FLCL banner
-
-//sub header with "Memory Game"
-//box for user to input their Initials that gets stored for the high score later
-//"Ready" button to take the user to the game scoreboard
-
-//A container div to hold the 6x6 grid
-//6x6 grid to hold the Icons
-//A start button that reveals all images of the 6x6 for 5 seconds, then starts the timer.
-//A reset button that will take the user back to the landing page and shuffles the Icons
-//Timer that starts from 00:00:00 and incrememnts by miliseconds until all icons have been matched
-//Score board that keeps track of times appended to user's initials
-//Alert after all icons have been matched "COngratulations, [user initials]! Your score is [timer]"
+// console.log("Linked!");
 let icons = [
   "../images/FLCL_Cigarette.jpg",
   "../images/FLCL_Silhouette.jpg",
@@ -84,7 +60,7 @@ function shuffle(array) {
 
 let createBoard = () => {
   icons = shuffle(icons);
-  debugger;
+  // debugger;
   for (let i = 0; i < icons.length; i++) {
     //create 2 image DOM nodes
     let $iconNode1 = $("<img>");
@@ -109,10 +85,11 @@ createBoard();
 let imageA = null;
 let imageB = null;
 let imageElementA = null;
+//use to count numer of matches to claim a win
+var matches = 0;
 let backImage = "../images/FLCL_BACK.jpg";
 
 let $container = $(".container");
-// $("img").on("click", clickCard);
 document.querySelectorAll("img").forEach(element => {
   element.addEventListener("click", clickCard);
 });
@@ -120,9 +97,6 @@ document.querySelectorAll("img").forEach(element => {
 function clickCard(evt) {
   // get access to DOM element clicked on
   let imageElement = evt.target;
-  // console.log(evt.target);
-  // console.log("now: ", imageElement);
-  // console.log("prev: ", imageElementA);
   //extract face of card from the element
   let faceImageSRC = imageElement.getAttribute("data-card-src");
   imageElement.setAttribute("src", faceImageSRC);
@@ -140,36 +114,37 @@ function clickCard(evt) {
       imageA = null;
       imageB = null;
       imageElementA = null;
+      matches ++;
+      console.log(matches);
+      winState();
       //stay face up
     } else {
       //keeps incorrect icons visible for 1.5 seconds
-
       setTimeout(function() {
         imageElementA.setAttribute("src", backImage);
         imageElement.setAttribute("src", backImage);
         imageA = null;
         imageB = null;
         imageElementA = null;
-      }, 500);
-      //revert to back image
+      }, 500); //flips card over after .5seconds if not a match
     }
-    // flip back to back image
   }
 }
-
-// var form = document.querySelector(".form");
-// form.addeventListener("submit", function(evt) {
-//   evt.preventDefault();
-//   var nameInput = document.querySelector('.name'):
-//   console.log(nameInput.value);
-// });
-//
-// setInterval(function() {
-//   alert("Hello");
-// }, 3000);
-// $container.click(clickCard);
-
-// Change two of the cards to different cards
-// Check if the two cards that have been clicked on are the same card
-
-// If the two cards aren't the same, flip them back over
+//prompt that asks for user's name
+let userName = prompt("Please enter your name", "");
+//adds user name to page
+if (userName != null) {
+    document.getElementById('welcome').innerHTML =
+    "Hello " + userName + "! Good Luck!";
+}
+//Timer that adds 1 every second.
+let counter = 0;
+window.setInterval(function() {
+  document.getElementById('timer').innerHTML = counter ++;
+}, 1000);
+// potential win state alert
+function winState() {
+  if (matches === 18) {
+    alert("Congratulations " + userName + "! You won at " + counter + " seconds!")
+  }
+};
