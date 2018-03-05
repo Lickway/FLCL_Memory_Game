@@ -64,7 +64,7 @@ h1 {
   color: #413026;
   margin: 0 auto;
   width: 300px;
-  padding: 25px;
+  padding: 15px;
 }
 h2 {
   font-family: "Poiret One", cursive;
@@ -80,4 +80,7 @@ h2 {
 #timer {
   font-size: 50px;
   float: right;
+  position: absolute;
+  top: 200px;
+  left: 20px;
 }

@@ -1,41 +1,41 @@
 // console.log("Linked!");
 let icons = [
-  "../images/FLCL_Cigarette.jpg",
-  "../images/FLCL_Silhouette.jpg",
-  "../images/FLCL_Angel.jpg",
-  "../images/FLCL_Annoyed.jpg",
-  "../images/FLCL_Baseball_Guitar.jpg",
-  "../images/FLCL_Horn.jpg",
-  "../images/FLCL_Moped.jpg",
-  "../images/FLCL_Kneeling.jpg",
-  "../images/FLCL_Baseball_Hit.jpg",
-  "../images/FLCL_Bat.jpg",
-  "../images/FLCL_Drink.jpg",
-  "../images/FLCL_Bed.jpg",
-  "../images/FLCL_Logo_Cat.jpg",
-  "../images/FLCL_Logo_Japanese.jpg",
-  "../images/FLCL_Mamimi.jpg",
-  "../images/FLCL_Piggyback.jpg",
-  "../images/FLCL_Popcicle.jpg",
-  "../images/FLCL_Portrait.jpg",
-  "../images/FLCL_Cigarette.jpg",
-  "../images/FLCL_Silhouette.jpg",
-  "../images/FLCL_Angel.jpg",
-  "../images/FLCL_Annoyed.jpg",
-  "../images/FLCL_Baseball_Guitar.jpg",
-  "../images/FLCL_Horn.jpg",
-  "../images/FLCL_Moped.jpg",
-  "../images/FLCL_Kneeling.jpg",
-  "../images/FLCL_Baseball_Hit.jpg",
-  "../images/FLCL_Bat.jpg",
-  "../images/FLCL_Drink.jpg",
-  "../images/FLCL_Bed.jpg",
-  "../images/FLCL_Logo_Cat.jpg",
-  "../images/FLCL_Logo_Japanese.jpg",
-  "../images/FLCL_Mamimi.jpg",
-  "../images/FLCL_Piggyback.jpg",
-  "../images/FLCL_Popcicle.jpg",
-  "../images/FLCL_Portrait.jpg"
+  "images/FLCL_Cigarette.jpg",
+  "images/FLCL_Silhouette.jpg",
+  "images/FLCL_Angel.jpg",
+  "images/FLCL_Annoyed.jpg",
+  "images/FLCL_Baseball_Guitar.jpg",
+  "images/FLCL_Horn.jpg",
+  "images/FLCL_Moped.jpg",
+  "images/FLCL_Kneeling.jpg",
+  "images/FLCL_Baseball_Hit.jpg",
+  "images/FLCL_Bat.jpg",
+  "images/FLCL_Drink.jpg",
+  "images/FLCL_Bed.jpg",
+  "images/FLCL_Logo_Cat.jpg",
+  "images/FLCL_Logo_Japanese.jpg",
+  "images/FLCL_Mamimi.jpg",
+  "images/FLCL_Piggyback.jpg",
+  "images/FLCL_Popcicle.jpg",
+  "images/FLCL_Portrait.jpg",
+  "images/FLCL_Cigarette.jpg",
+  "images/FLCL_Silhouette.jpg",
+  "images/FLCL_Angel.jpg",
+  "images/FLCL_Annoyed.jpg",
+  "images/FLCL_Baseball_Guitar.jpg",
+  "images/FLCL_Horn.jpg",
+  "images/FLCL_Moped.jpg",
+  "images/FLCL_Kneeling.jpg",
+  "images/FLCL_Baseball_Hit.jpg",
+  "images/FLCL_Bat.jpg",
+  "images/FLCL_Drink.jpg",
+  "images/FLCL_Bed.jpg",
+  "images/FLCL_Logo_Cat.jpg",
+  "images/FLCL_Logo_Japanese.jpg",
+  "images/FLCL_Mamimi.jpg",
+  "images/FLCL_Piggyback.jpg",
+  "images/FLCL_Popcicle.jpg",
+  "images/FLCL_Portrait.jpg"
 ];
 //https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array/2450976
 function shuffle(array) {
@@ -65,7 +65,7 @@ let createBoard = () => {
     //create 2 image DOM nodes
     let $iconNode1 = $("<img>");
     //set src
-    $iconNode1.attr("src", "../images/FLCL_BACK.jpg");
+    $iconNode1.attr("src", "images/FLCL_BACK.jpg");
     //set data src
     $iconNode1.attr("data-card-src", icons[i]);
     //class to tile
@@ -87,7 +87,7 @@ let imageB = null;
 let imageElementA = null;
 //use to count numer of matches to claim a win
 var matches = 0;
-let backImage = "../images/FLCL_BACK.jpg";
+let backImage = "images/FLCL_BACK.jpg";
 
 let $container = $(".container");
 document.querySelectorAll("img").forEach(element => {
